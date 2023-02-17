@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
+import { width } from "./utils";
 import ScoreBoard from "./components/ScoreBoard";
-import blueCandy from './images/blue-candy.png'
-import greenCandy from './images/green-candy.png'
-import orangeCandy from './images/orange-candy.png'
-import purpleCandy from './images/purple-candy.png'
-import redCandy from './images/red-candy.png'
-import yellowCandy from './images/yellow-candy.png'
+//import blueCandy from './images/blue-candy.png'
+//import greenCandy from './images/green-candy.png'
+//import orangeCandy from './images/orange-candy.png'
+//import purpleCandy from './images/purple-candy.png'
+//import redCandy from './images/red-candy.png'
+//import yellowCandy from './images/yellow-candy.png'
 import blank from './images/blank.png'
+import { candyColors } from "./utils";
 
-const width = 8;
-const candyColors = [blueCandy, greenCandy, orangeCandy, purpleCandy, redCandy, yellowCandy];
+//const width = 8;
+//const candyColors = [blueCandy, greenCandy, orangeCandy, purpleCandy, redCandy, yellowCandy];
 
 const App = () => {
 
@@ -91,8 +93,6 @@ const App = () => {
     }
   }
 
-  console.log(scoreDisplay)
-
   const dragStart = (e) => {
     setSquareBeingDragged(e.target)
   }
@@ -109,7 +109,6 @@ const App = () => {
     currentColorArrangement[squareBeingReplacedId] = squareBeingDragged.getAttribute('src')
     currentColorArrangement[squareBeingDraggedId] = squareBeingDragged.getAttribute('src')
 
-    
     const validMoves = [squareBeingDraggedId - 1, squareBeingDraggedId - width, squareBeingDraggedId + 1, squareBeingDraggedId + width]
 
     const validMove = validMoves.includes(squareBeingReplacedId)
